@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tailwind playground</title>
     <link rel="stylesheet" href="css/dist.css" />
+    <script src="js/index.js" defer></script>
   </head>
   <body class="grid grid-cols-[auto_1fr]">
     <!-- <div class="flex flex-col md:flex-row justify-center">
@@ -20,11 +21,11 @@
         m-2 p-2 border border-gray-800 font-medium text-lg
       </div>
     </div> -->
-    <nav id="sidebar" class="h-screen w-3xs py-1.5 px-4 border-r border-cyan-600">
+    <nav id="sidebar" class="sticky top-0 self-start h-screen w-3xs py-1.5 px-4 border-r border-cyan-600">
       <ul>
         <li class="flex justify-end mb-4">
-          <span class="rounded-lg p-3.5 flex items-center gap-4 font-semibold">coding2go</span>
-          <button id="toggle-btn">
+          <span class="logo font-semibold">coding2go</span>
+          <button id="toggle-btn" onclick="toggleSideBar()">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -36,13 +37,13 @@
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+                d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5"
               />
             </svg>
           </button>
         </li>
         <li>
-          <a href="#" class="rounded-lg p-3.5 flex items-center gap-4">
+          <a href="#" class="menulink">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -61,8 +62,8 @@
             <span>Home</span>
           </a>
         </li>
-        <li>
-          <a href="#" class="rounded-lg p-3.5 flex items-center gap-4">
+        <li class="activeMenuItem">
+          <a href="#" class="menulink">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -79,7 +80,7 @@
           </a>
         </li>
         <li>
-          <button class="rounded-lg p-3.5 flex items-center gap-4 w-full text-left bg-none border-none">
+          <button class="menulink w-full text-left bg-none border-none" onclick="toggleSubMenu(this)">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -107,14 +108,16 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
             </svg>
           </button>
-          <ul>
-            <li><a href="#">Folder</a></li>
-            <li><a href="#">Document</a></li>
-            <li><a href="#">Project</a></li>
+          <ul class="subMenu">
+            <div>
+              <li><a href="#">Folder</a></li>
+              <li><a href="#">Document</a></li>
+              <li><a href="#">Project</a></li>
+            </div>
           </ul>
         </li>
         <li>
-          <button class="rounded-lg p-3.5 flex items-center gap-4">
+          <button class="menulink w-full text-left bg-none border-none" onclick="toggleSubMenu(this)">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -142,16 +145,18 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
             </svg>
           </button>
-          <ul>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Private</a></li>
-            <li><a href="#">Coding</a></li>
-            <li><a href="#">Gardening</a></li>
-            <li><a href="#">School</a></li>
+          <ul class="subMenu">
+            <div>
+              <li><a href="#">Work</a></li>
+              <li><a href="#">Private</a></li>
+              <li><a href="#">Coding</a></li>
+              <li><a href="#">Gardening</a></li>
+              <li><a href="#">School</a></li>
+            </div>
           </ul>
         </li>
         <li>
-          <a href="#" class="rounded-lg p-3.5 flex items-center gap-4">
+          <a href="#" class="menulink">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -171,7 +176,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="rounded-lg p-3.5 flex items-center gap-4">
+          <a href="#" class="menulink">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -214,6 +219,17 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus error delectus odit, porro officiis, quo quae
           aliquam vitae ipsam, possimus omnis ea ad nostrum tenetur? Error facilis exercitationem, pariatur aut modi
           eligendi odio. Suscipit, eveniet esse!
+        </p>
+      </div>
+      <div class="container border border-cyan-600 rounded-2xl mb-5 p-12">
+        <h2 class="text-3xl font-bold mb-4">Lorem, ipsum.</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga illum odio ea itaque similique tempora! Dolorum
+          iure quia labore consequuntur ad itaque doloremque maiores officia totam soluta. Animi nobis quidem, officiis
+          quia praesentium sequi esse consequatur amet minima aperiam sapiente voluptatibus iure, voluptatum soluta
+          repellendus ut. Facere quae molestias repudiandae illo quasi vitae impedit repellendus nisi itaque totam, unde
+          saepe soluta cum obcaecati tempore quod dignissimos iste, aut harum temporibus sit veritatis. Veritatis
+          assumenda, quasi maxime nisi impedit delectus magnam.
         </p>
       </div>
     </main>
